@@ -1,0 +1,17 @@
+Abstract
+This is a s3fs version that makes minimal changes in order to allow s3fs working with European schema. Is built on the top of the great work done by Randy Rizun with s3fs. 
+
+Fixes
+It changes the way urls are used passing from http://s3.amazonaws.com/bucket to http://bucket.s3.amazonaws.com.
+It also includes some tiny fixes on content type headers not provided on some requests that now are provided as empty Content-Type header.
+
+Usage :
+   Changes nothing on the provided parameters
+   Example : sudo s3fs BUCKET_NAME -o accessKeyId=YOUR_KEY_ID -o secretAccessKey=YOUR_KEY -o use_cache=/tmp -o allow_other /dir/where/you/mount
+             and to umount: sudo umount /dir/where/you/mount
+
+   Tips :  some log messages are dumped to the syslog, check them if you're in trouble getting this working. 
+   Additional tip: if you run s3fs with -d a very interesting debugging info
+
+Roadmap :
+   We have no scheduled roadmap but we're going to be heavy users of this tool so we test it and will make some improvements. Those improvements will be included to this repo but no calendar has been fixed yet. 
